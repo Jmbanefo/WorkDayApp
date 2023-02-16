@@ -1,4 +1,4 @@
-var currentTime = dayjs().hour();
+var currentTime = 13 //dayjs().hour();
 var currentDate = dayjs().format('MMM D YYYY');
 
 $("#currentDay").html(currentDate);
@@ -6,7 +6,8 @@ $("#currentDay").html(currentDate);
     function timeTracker() {
         $(".time-block").each(function () {
             
-    var checkTime = parseInt($(this).attr("id").split("hour")[1]);
+    var checkTime = parseInt($(this).attr("id").split("-")[1]);
+    console.log(checkTime);
         if (checkTime < currentTime) {
                 $(this).removeClass("future");
                 $(this).removeClass("present");
@@ -33,15 +34,15 @@ $("#currentDay").html(currentDate);
                 localStorage.setItem(time, text);
         })
 
-        $("#hour-8am .description").val(localStorage.getItem("hour-8am"));
-        $("#hour-9am .description").val(localStorage.getItem("hour-9am"));
-        $("#hour-10am .description").val(localStorage.getItem("hour-10am"));
-        $("#hour-11am .description").val(localStorage.getItem("hour-11am"));
-        $("#hour-12pm .description").val(localStorage.getItem("hour-12pm"));
-        $("#hour-1pm .description").val(localStorage.getItem("hour-1pm"));
-        $("#hour-2pm .description").val(localStorage.getItem("hour-2pm"));
-        $("#hour-3pm .description").val(localStorage.getItem("hour-3pm"));
-        $("#hour-4pm .description").val(localStorage.getItem("hour-4pm"));
-        $("#hour-5pm .description").val(localStorage.getItem("hour-5pm"));
+        $("#hour-8 .description").val(localStorage.getItem("hour-8"));
+        $("#hour-9 .description").val(localStorage.getItem("hour-9"));
+        $("#hour-10 .description").val(localStorage.getItem("hour-10"));
+        $("#hour-11 .description").val(localStorage.getItem("hour-11"));
+        $("#hour-12 .description").val(localStorage.getItem("hour-12"));
+        $("#hour-13 .description").val(localStorage.getItem("hour-13"));
+        $("#hour-14 .description").val(localStorage.getItem("hour-14"));
+        $("#hour-15 .description").val(localStorage.getItem("hour-15"));
+        $("#hour-16 .description").val(localStorage.getItem("hour-16"));
+        $("#hour-17 .description").val(localStorage.getItem("hour-17"));
     timeTracker();
 })
