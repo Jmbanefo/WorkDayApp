@@ -6,7 +6,7 @@ $("#currentDay").html(currentDate);
     function timeTracker() {
         $(".time-block").each(function () {
             
-            var checkTime = parseInt($(this).attr("id").split("hour")[1]);
+    var checkTime = parseInt($(this).attr("id").split("hour")[1]);
         if (checkTime < currentTime) {
                 $(this).removeClass("future");
                 $(this).removeClass("present");
