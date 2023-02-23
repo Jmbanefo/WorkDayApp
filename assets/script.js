@@ -1,4 +1,4 @@
-var currentTime = 13 //dayjs().hour();
+var currentTime = dayjs().hour();
 var currentDate = dayjs().format('MMM D YYYY');
 
 $("#currentDay").html(currentDate);
@@ -29,9 +29,9 @@ $("#currentDay").html(currentDate);
     $(document).ready(function () {
 
      $(".saveBtn").on("click", function () {
-            var text = $(this).siblings(".description").val();
             var time = $(this).parent().attr("id");
-                localStorage.setItem(time, text);
+            var display = $(this).siblings(".description").val();
+                localStorage.setItem(time, display);
         })
 
         $("#hour-8 .description").val(localStorage.getItem("hour-8"));
